@@ -1,0 +1,355 @@
+fieldset {
+	border: none;
+}
+.form-group {
+	gap: 2rem;
+
+	@media screen and (max-width: 577px) {
+		gap: 1rem;
+	}
+
+	margin-bottom: 2rem;
+	border: none;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+
+	&.column-mobile {
+		flex-direction: column;
+		gap: 1rem;
+		margin-bottom: 2rem;
+	}
+}
+
+.form-mine {
+	margin: 0 auto;
+	width: min(95%, 500px);
+	background: #171231;
+	border: 1px solid #2b2356;
+	border-radius: 20px;
+	padding: 2rem 2rem;
+	color: var(--color-primary-light);
+
+	hr {
+		border: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	input[type='number'] {
+		outline: none;
+		border: none;
+		border-radius: 5px;
+		height: 40px;
+		background-color: #3e3279;
+		color: var(--color-primary-light);
+		padding: 0;
+		width: 200px;
+		padding: 0 1rem;
+		font-size: 1.2rem;
+	}
+}
+
+.custom-file-upload {
+	width: 160px;
+	height: 48px;
+	background-color: #1fc7d3;
+	font-weight: 600;
+	border: none;
+	outline: none;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: all 0.3s;
+	order: 1;
+	color: #353535 !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.light .custom-file-upload {
+	color: #ffffff !important;
+}
+
+input[type='file'] {
+	display: none;
+}
+
+input[type='text'],
+input[type='email'], textarea {
+	background: #8653d2;
+	border: none;
+	border-radius: 10px;
+	font-size: 1.2rem;
+	height: 3rem;
+	outline: 0px;
+	padding: 0 1rem;
+
+	&:focus {
+		box-shadow: rgb(118 69 217) 0px 0px 0px 1px, rgb(118 69 217 / 60%) 0px 0px 0px 4px;
+	}
+
+	&::placeholder {
+		color: rgb(148 105 212);
+	}
+
+	&.input-text-primary {
+		box-shadow: 0 4px 0 var(--color-primary-darker);
+	}
+}
+
+.button-stake {
+	width: 100%;
+	margin: 2rem auto 0;
+	display: block;
+	background: #c37a21;
+	border: none;
+	color: white;
+	border-radius: 15px;
+	padding: 1rem 2rem;
+	box-shadow: 0 4px 0 var(--color-accent-dark);
+	&[disabled] {
+		color: #bbbbbb;
+		text-shadow: 0 4px #969696;
+		background: #a2a2a2;
+		box-shadow: 0 4px 0 grey;
+	}
+}
+
+input[type='range'] {
+	-webkit-appearance: none;
+	width: 100%;
+	height: 10px;
+	border-radius: 5px;
+	background: #1fc7d3;
+	outline: none;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+	height: 10px;
+	-webkit-appearance: none;
+	color: #5c37af;
+	margin-top: -17px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 29px;
+	height: 29px;
+	border-radius: 50%;
+	background: #5c37af;
+	cursor: pointer;
+	background-image: url('../img/slider.png');
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+input[type='range']::-moz-range-thumb {
+	width: 29px;
+	height: 29px;
+	border-radius: 50%;
+	background: #5c37af;
+	cursor: pointer;
+	background-image: url('../img/slider.png');
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+input[type='range']::-moz-range-progress {
+	background-color: #1fc7d3;
+}
+input[type='range']::-moz-range-track {
+	background-color: #1fc7d3;
+}
+input[type='range']::-ms-fill-lower {
+	background-color: #1fc7d3;
+}
+input[type='range']::-ms-fill-upper {
+	background-color: #5c37af;
+}
+
+.select-group {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
+	@media screen and (min-width: 1365px) {
+		justify-content: flex-start;
+		width: 92%;
+	}
+}
+.select-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 2rem;
+	label {
+		width: 60px;
+		text-align: right;
+		margin-right: 1rem;
+	}
+}
+
+.custom-select {
+	position: relative;
+	width: 200px;
+	margin-right: 1rem;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 150%;
+
+	@media screen and (min-width: 1365px) {
+		width: 153px;
+	}
+
+	&[open] {
+		z-index: 1;
+	}
+
+	summary {
+		padding: 1rem;
+		cursor: pointer;
+		/* border-radius: 5px; */
+		/* background-color: rgba(0, 0, 0, .2); */
+		list-style: none;
+		color: white;
+	}
+
+	summary::-webkit-details-marker {
+		display: none;
+	}
+
+	&[open] summary:before {
+		content: '';
+		display: block;
+		width: 100vw;
+		height: 100vh;
+		/* background: transparent; */
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
+
+	summary:after {
+		content: '';
+		display: inline-block;
+		float: right;
+		width: 0.5rem;
+		height: 0.5rem;
+		border-bottom-left-radius: 2px;
+		transform: rotate(-45deg) translate(0%, 50%);
+		transform-origin: center center;
+		transition: transform ease-in-out 100ms;
+	}
+
+	summary:focus {
+		outline: none;
+	}
+
+	&[open] summary:after {
+		transform: rotate(-225deg) translate(25%, -50%);
+	}
+
+	ul {
+		width: 100%;
+		/* background: var(--color-modal-darker); */
+		position: absolute;
+		top: calc(100% + 0.5rem);
+		left: 0;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border-radius: 5px;
+		max-height: max-content;
+		overflow-y: auto;
+		list-style: none;
+	}
+
+	li {
+		cursor: pointer;
+		margin: 0;
+		padding: 1rem;
+		/* border-bottom: 1px solid rgba(255, 255, 255, 0.05); */
+
+		&:hover {
+			/* background-color: rgba(0,0,0,.2) */
+		}
+	}
+
+	li:last-child {
+		border-bottom: none;
+	}
+
+	/* FAKE SELECT */
+
+	summary.radios {
+		counter-reset: radios;
+	}
+
+	input[type='radio'] {
+		counter-increment: radios;
+		appearance: none;
+		display: none;
+		/* color: white; */
+	}
+
+	input[type='radio']:checked {
+		display: inline;
+	}
+
+	input[type='radio']:after {
+		content: attr(title);
+		display: inline;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 16px;
+		line-height: 150%;
+	}
+
+	/* .light input[type=radio] {
+      color: #353535 !important;
+  } */
+
+	ul.list {
+		counter-reset: labels;
+	}
+}
+
+.light input[type='radio'] {
+	color: #353535;
+}
+
+input[type='radio'] {
+	color: white;
+}
+
+@media screen and (min-width: 768px) {
+	fieldset.column-mobile {
+		flex-direction: row;
+		margin-bottom: 1rem;
+	}
+}
+
+.button-percentage-group {
+	display: flex;
+	justify-content: space-between;
+
+	.button-percentage {
+		background-color: #3e3279;
+		border: none;
+		color: #868ad6;
+		padding: 0.5rem;
+		border-radius: 5px;
+
+		&:hover {
+			background-color: #3e3279dd;
+		}
+
+		&.active {
+			background-color: #2fe2ff;
+			color: #28718e;
+		}
+	}
+}

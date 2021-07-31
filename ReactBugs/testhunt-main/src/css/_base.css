@@ -1,0 +1,125 @@
+:root {
+    --color-primary: #7A4FD4;
+    --color-primary-dark: #7952B3;
+    --color-primary-darker: #613C98;
+    --color-primary-darkest: #372F47;
+    --color-primary-300: #A4A7ED;
+    --color-primary-light: #BFB4F1;
+    --color-primary-lighter: #D9C8FF;
+    --color-primary-lightest: #DCDDEE;
+    --color-bg-dark: #3D2A54;
+    --color-bg-darker: #000032;
+    --color-bg-darkgrey: #343A40;
+    --color-modal-darker: #17181F;
+    --color-modal-dark: #1F202A;
+    --color-accent: #F7931A;
+    --color-accent-dark: #A35C07;
+    --color-danger: #A02D1D;
+    --color-grey-lighter: #C4C4C4;
+    --transition-speed: 600ms;
+    --container-width: 1200px;
+    --font-family-primary: 'Kanit', Arial, sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 15px;
+}
+*,*:before,*:after {
+    box-sizing: inherit;
+}
+
+body {
+    background: linear-gradient(135deg, var(--color-bg-dark), var(--color-bg-darker)) no-repeat;
+    background-color: var(--color-bg-dark);
+    font-family: var(--font-family-primary);
+    font-weight: 300;
+    color: white;
+    line-height: 1.15;
+    margin: 0;
+    overflow-y: scroll;
+}
+
+body.navbar-open, body.modal-open {
+    overflow-y: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 300;
+    margin: 0;
+}
+p {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+}
+a:hover {
+    text-decoration: none;
+    color: var(--color-primary-dark);
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+button,
+input {
+    overflow: visible;
+}
+button,
+select {
+    text-transform: none;
+}
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+[type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+}
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+.container {
+    width: min(100%, var(--container-width));
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}

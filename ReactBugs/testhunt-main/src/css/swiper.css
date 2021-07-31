@@ -1,0 +1,38 @@
+.modifier-swiper, .bounty-swiper {
+    .swiper-container{
+        --swiper-theme-color: #FFFFFF;
+        padding-bottom: 50px;
+    }
+
+}
+
+.swiper-pagination-bullet {
+  background-color: white !important;
+  opacity: 1 !important;
+  margin: 0 15px !important;
+}
+
+.light .swiper-pagination-bullet {
+  background-color: #1FC7D3 !important;
+}
+
+
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 1280px) {
+    .modifier-swiper {
+        .swiper-button-next, .swiper-button-prev {
+            display: none !important;
+        }
+    }
+
+    .section-header-inner button{
+        display: inline-block;
+    }
+
+}

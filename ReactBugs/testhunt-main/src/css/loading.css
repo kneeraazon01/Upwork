@@ -1,0 +1,16 @@
+.placeholder {
+    * {
+        background: linear-gradient(90deg, rgba(0,0,0,.3), rgba(0,0,0,.1), rgba(0,0,0,.3));
+        background-size: 200% 100%;
+        border: none;
+        box-shadow: none;
+        border-radius: 10px;
+        animation: 1.5s shine linear infinite;
+    }
+}
+
+@keyframes shine {
+    100% {
+        background-position-x: -200%;
+    }
+}

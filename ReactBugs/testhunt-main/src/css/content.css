@@ -1,0 +1,199 @@
+main {
+    margin-top: 5rem;
+}
+
+.group-item-inner {
+    cursor: pointer;
+    width: max-content;
+    margin: 0 auto;
+
+    h3 {
+        /* text-shadow: 0 .2em 0 rgba(0, 0, 0, 0.5); */
+        font-size: 1rem;
+    }
+}
+
+.section-modifier {
+    background-color: var(--color-primary-darker);
+    padding: 2rem 0;
+    border-bottom: 20px solid var(--color-primary-darkest);
+    border-top: 20px solid var(--color-primary-darkest);
+    width: 90%;
+
+    @media screen and (min-width: 1365px) {
+      padding: 0 0 2rem 0;
+    }  
+}
+
+.section-header {
+    .section-title {
+        width: max-content;
+    }
+
+    h2 {
+        text-shadow: 0 4px rgba(0,0,0, .2);
+        color: var(--color-primary-lighter);
+        background: rgba(0,0,0,0.2);
+        padding: 0.5em;
+        font-size: 1.2rem;
+    }
+}
+
+.section-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+        display: none;
+        background: none;
+        border: none;
+    }
+
+    /* i {
+        color: rgba(0, 0, 0, .5);
+        font-size: 1.5rem;
+        text-shadow: 0 2px 0 rgba(255, 255, 255, .1);
+    } */
+}
+
+.section-treasure-box, .section-trove, .section-mine {
+    padding: 2rem 0;
+}
+
+.section-treasure-box {
+    background-color: var(--color-bg-darkgrey);
+}
+
+.card-list {
+    min-height: 300px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 2rem;
+}
+
+    .card-button-item {
+        grid-column: 1 / span 2;
+        justify-self: center;
+    }
+
+.card-list-item {
+    h3 {
+        text-align: center;
+    }
+
+    &.card-inactive {
+        opacity: .7;
+    }
+
+    &.card-active {
+        opacity: 1;
+    }
+}
+
+.card-list-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.total-modifier {
+    /* background: rgba(0,0,0,0.2); */
+    width: max-content;
+    margin: 0 auto;
+    border-radius: 10px;
+    h3 {
+        text-shadow: 0 4px rgba(0,0,0, .2);
+        color: var(--color-primary-lighter);
+        padding: 1em 2em;
+        font-size: 1.4rem;
+
+        span {
+            color: var(--color-accent);
+        }
+    }
+}
+
+.trove-value-title {
+    width: 200px;
+    margin: 0 auto;
+    border-radius: 10px;
+    span {
+        color: var(--color-accent);
+    }
+}
+
+button-claim-trove {
+    margin: 0 2rem;
+}
+@property --num {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+.counter {
+  animation: counter 3s alternate ease-in-out;
+
+animation-fill-mode: forwards;
+  counter-reset: num var(--num);
+}
+.counter::after {
+  content: counter(num);
+}
+
+@keyframes counter {
+  from {
+    --num: 0;
+  }
+  to {
+    --num: var(--real-num);
+  }
+}
+
+
+@media screen and (min-width: 640px) {
+    .card-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card-button-item {
+        grid-column: 1 / span 3;
+        justify-self: center;
+    }
+}
+
+@media screen and (min-width: 860px) {
+    .card-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card-button-item {
+        grid-column: 1 / span 4;
+        justify-self: center;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .card-list {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .card-button-item {
+        grid-column: 1 / span 5;
+        justify-self: center;
+    }
+}
+
+
+@media screen and (min-width: 1280px) {
+    .card-list{
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .card-button-item {
+        grid-column: 1 / span 6;
+        justify-self: center;
+    }
+}
