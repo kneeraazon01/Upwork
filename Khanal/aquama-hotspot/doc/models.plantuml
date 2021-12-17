@@ -1,0 +1,64 @@
+@startuml
+object Location {
+        name: CharField
+        description: TextField
+        longitute: FloatField
+        latitude: FloatField
+        street: CharField
+        NPA: CharField
+        city: CharField
+        country: CharField
+        floor: IntegerField
+        additional_informations: TextField
+        phone_number: CharField
+        website: URLField
+        created_on: DateTimeField
+        available_on: DateTimeField
+        images: -> Image
+}
+
+object OpenHours {
+       location: -> Location
+       open_hour: TimeField
+       close_hour: TimeField
+       monday: BooleanField
+       tuesday: BooleanField
+       wednesday: BooleanField
+       thursday: BooleanField
+       friday: BooleanField
+       saturday: BooleanField
+       sunday: BooleanField
+}
+
+object AquamaMachine {
+       locations: -> Location
+       serial_number: BigIntegerField
+       name: CharField
+       bluetooth_name: CharField
+       aquama_solution_types: -> AquamaSolutionType
+       wwan_available: BooleanField
+       images: -> Image
+}
+
+object AquamaSolutionType {
+       name: CharField
+}
+
+object AquamaPointOfSale {
+       location: -> Location
+}
+
+object Image {
+       image: ImageField
+       name: CharField
+       description: TextField 
+}
+
+
+OpenHours::location --> Location : ManyToOne
+AquamaPointOfSale::location --> Location : ManyToOne
+AquamaMachine::location --> Location : ManyToManyOne
+AquamaMachine::aquama_solution_types --> AquamaSolutionType : ManyToMany
+AquamaMachine::images --> Image : ManyToMany
+Location::images --> Image : ManyToMany
+@enduml

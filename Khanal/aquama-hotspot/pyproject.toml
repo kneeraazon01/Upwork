@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "aquama-hotspot"
+version = "0.1.0"
+description = ""
+authors = ["Sébastien Gendre <sgendre@aquama.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+Django = "3.2"
+djangorestframework = "^3.12.4"
+markdown = "^3.3.4"
+django-filter = "^2.4.0"
+Pillow = "^8.2.0"
+aquama-hydro-client = {git = "ssh://git@git.aquama.ch:9122/sgendre/aquama_hydro_client_py.git", rev = "0.3.2"}
+bcrypt = "^3.2.0"
+python-dateutil = "^2.8.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
